@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	// Инициализация БД
+	// Инициализация базы данных
 	err := models.InitDatabase()
 	if err != nil {
 		log.Fatalf("Ошибка инициализации базы данных: %v", err)
@@ -18,7 +18,7 @@ func main() {
 	http.HandleFunc("/", handlers.HomeHandler)
 	http.HandleFunc("/login", handlers.LoginHandler)
 
-	// Запуск сервера
+	// Запуск веб-сервера
 	log.Println("Сервер запущен на http://localhost:8080")
 	err = http.ListenAndServe(":8080", nil)
 	if err != nil {

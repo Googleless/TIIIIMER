@@ -5,6 +5,7 @@ import (
 	"net/http"
 )
 
+// HomeHandler обрабатывает запросы на главную страницу
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles("templates/index.html")
 	if err != nil {
